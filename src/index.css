@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@keyframes sprinkle-burst-left {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.3);
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rot)) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes sprinkle-burst-right {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.3);
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(calc(-1 * var(--tx)), var(--ty), 0) rotate(var(--rot)) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.sprinkle-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--bg);
+  border-radius: var(--rx, 50%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: sprinkle-burst-left var(--duration) cubic-bezier(0.1, 0.82, 0.25, 1) forwards;
+}
+
+.sprinkle-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--bg);
+  border-radius: var(--rx, 50%);
+  pointer-events: none;
+  z-index: 9999;
+  animation: sprinkle-burst-right var(--duration) cubic-bezier(0.1, 0.82, 0.25, 1) forwards;
+}

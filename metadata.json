@@ -1,0 +1,6 @@
+{
+  "name": "EcoStep",
+  "description": "An interactive ecological strategy game that evaluates carbon footprint, tracks daily activities, and rewards green decisions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
